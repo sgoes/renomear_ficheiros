@@ -96,9 +96,6 @@
 </head>
 <body>
   <div class="app-container text-center">
-    <!--<a href="" target="_blank">
-      <img src="YOUR_LOGO_URL" alt="IMT Logo" class="logo">
-    </a>-->
     <h1 class="text-center">Substituir Carateres Especiais</h1>
     <form>
       <div class="form-group">
@@ -127,10 +124,10 @@
         "î": "i", "ô": "o", "û": "u", "ä": "a", "ë": "e",
         "ï": "i", "ö": "o", "ü": "u", " ": "_", ":": "", 
         "(": "", ")": "", "/": "", "\\": "", "[": "", 
-        "]": "", "&": "", "%": "", "$": "", "€": "", "[€": ""
+        "]": "", "&": "", "%": "", "$": "", "€": "euro"
       };
-      
-      return text.split('').map(char => specialCharactersMap[char] || char).join('');
+
+      return text.split('').map(char => specialCharactersMap[char] || char).join('').replace(/[€\[\]]/g, '');
     }
 
     function convertText() {
