@@ -1,166 +1,166 @@
-
 <!doctype html>
 <html lang="pt">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Substituir Caracteres Especiais</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-      body {
-        font-family: 'Roboto', sans-serif;
-        background-color: #f4f6f9;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-      }
-      .app-container {
-        max-width: 600px;
-        width: 100%;
-        padding: 40px;
-        border-radius: 8px;
-        background-color: #ffffff;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      }
-      textarea[readonly] {
-        background-color: #e9ecef;
-      }
-      .footer {
-        text-align: center;
-        margin-top: 20px;
-        font-size: 0.9em;
-        color: #555;
-      }
-      .logo {
-        max-width: 120px;
-        display: block;
-        margin: 20px auto;
-      }
-      .btn-group-custom {
-        margin-top: 20px;
-        display: flex;
-        justify-content: space-between;
-      }
-      .btn-custom {
-        flex: 1;
-        margin: 0 5px;
-      }
-      h1 {
-        font-family: 'Noto Sans', sans-serif;
-        font-weight: 700;
-        color: #2c3e50;
-        font-size: 1.75rem;
-        margin-bottom: 20px;
-      }
-      h2 {
-        font-family: 'Noto Sans', sans-serif;
-        font-weight: 400;
-        color: #34495e;
-        font-size: 1.25rem;
-        margin-top: 30px;
-      }
-      label {
-        font-family: 'Noto Sans', sans-serif;
-        font-weight: 500;
-        color: #34495e;
-      }
-      button {
-        font-family: 'Noto Sans', sans-serif;
-        font-weight: 500;
-      }
-      .btn-primary {
-        background-color: #007bff;
-        border: none;
-      }
-      .btn-secondary {
-        background-color: #6c757d;
-        border: none;
-      }
-      .btn-info {
-        background-color: #17a2b8;
-        border: none;
-      }
-      .btn-warning {
-        background-color: #ffc107;
-        border: none;
-      }
-      .btn-success {
-        background-color: #28a745;
-        border: none;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="app-container text-center">
-      <!--<a href="" target="_blank">
-        <img src="YOUR_LOGO_URL" alt="IMT Logo" class="logo">
-      </a>-->
-      <h1 class="text-center">Substituir Carateres Especiais</h1>
-      <form>
-        <div class="form-group">
-          <label for="input_text">Texto de entrada:</label>
-          <textarea id="input_text" class="form-control" rows="4"></textarea>
-        </div>
-        <div class="btn-group-custom">
-          <button type="button" class="btn btn-primary btn-custom" onclick="convertText()">Converter</button>
-          <button type="button" class="btn btn-secondary btn-custom" onclick="selectText()">Selecionar Texto</button>
-          <button type="button" class="btn btn-info btn-custom" onclick="pasteText()">Colar</button>
-          <button type="button" class="btn btn-warning btn-custom" onclick="clearText()">Apagar</button>
-        </div>
-      </form>
-      <h2 class="text-center mt-4">Texto de saída:</h2>
-      <textarea id="output_text" class="form-control" rows="4" readonly></textarea>
-      <button type="button" class="btn btn-success mt-2" onclick="copyText()">Copiar para a Área de Transferência</button>
-      <div class="footer">Desenvolvido pela DSEAP</div>
-      <div class="footer">2024</div>
-    </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Substituir Caracteres Especiais</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f6f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .app-container {
+      max-width: 600px;
+      width: 100%;
+      padding: 40px;
+      border-radius: 8px;
+      background-color: #ffffff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    textarea[readonly] {
+      background-color: #e9ecef;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #555;
+    }
+    .logo {
+      max-width: 120px;
+      display: block;
+      margin: 20px auto;
+    }
+    .btn-group-custom {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .btn-custom {
+      flex: 1;
+      margin: 0 5px;
+    }
+    h1 {
+      font-family: 'Noto Sans', sans-serif;
+      font-weight: 700;
+      color: #2c3e50;
+      font-size: 1.75rem;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-family: 'Noto Sans', sans-serif;
+      font-weight: 400;
+      color: #34495e;
+      font-size: 1.25rem;
+      margin-top: 30px;
+    }
+    label {
+      font-family: 'Noto Sans', sans-serif;
+      font-weight: 500;
+      color: #34495e;
+    }
+    button {
+      font-family: 'Noto Sans', sans-serif;
+      font-weight: 500;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+    }
+    .btn-secondary {
+      background-color: #6c757d;
+      border: none;
+    }
+    .btn-info {
+      background-color: #17a2b8;
+      border: none;
+    }
+    .btn-warning {
+      background-color: #ffc107;
+      border: none;
+    }
+    .btn-success {
+      background-color: #28a745;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container text-center">
+    <!--<a href="" target="_blank">
+      <img src="YOUR_LOGO_URL" alt="IMT Logo" class="logo">
+    </a>-->
+    <h1 class="text-center">Substituir Carateres Especiais</h1>
+    <form>
+      <div class="form-group">
+        <label for="input_text">Texto de entrada:</label>
+        <textarea id="input_text" class="form-control" rows="4"></textarea>
+      </div>
+      <div class="btn-group-custom">
+        <button type="button" class="btn btn-primary btn-custom" onclick="convertText()">Converter</button>
+        <button type="button" class="btn btn-secondary btn-custom" onclick="selectText()">Selecionar Texto</button>
+        <button type="button" class="btn btn-info btn-custom" onclick="pasteText()">Colar</button>
+        <button type="button" class="btn btn-warning btn-custom" onclick="clearText()">Apagar</button>
+      </div>
+    </form>
+    <h2 class="text-center mt-4">Texto de saída:</h2>
+    <textarea id="output_text" class="form-control" rows="4" readonly></textarea>
+    <button type="button" class="btn btn-success mt-2" onclick="copyText()">Copiar para a Área de Transferência</button>
+    <div class="footer">Desenvolvido pela DSEAP</div>
+    <div class="footer">2024</div>
+  </div>
 
-    <script>
-      function replaceSpecialCharacters(text) {
-        const specialCharactersMap = {
-          "á": "a", "é": "e", "í": "i", "ó": "o", "ú": "u",
-          "ç": "c", "ã": "a", "õ": "o", "â": "a", "ê": "e",
-          "î": "i", "ô": "o", "û": "u", "ä": "a", "ë": "e",
-          "ï": "i", "ö": "o", "ü": "u", " ": "_", ":": "", 
-          "(": "", ")": "", "/": "", "\\": "", "[": "", 
-          "]": "", "&": "", "%": "", "$": "", "€": ""
-        };
-        
-        return text.split('').map(char => specialCharactersMap[char] || char).join('');
-      }
+  <script>
+    function replaceSpecialCharacters(text) {
+      const specialCharactersMap = {
+        "á": "a", "é": "e", "í": "i", "ó": "o", "ú": "u",
+        "ç": "c", "ã": "a", "õ": "o", "â": "a", "ê": "e",
+        "î": "i", "ô": "o", "û": "u", "ä": "a", "ë": "e",
+        "ï": "i", "ö": "o", "ü": "u", " ": "_", ":": "", 
+        "(": "", ")": "", "/": "", "\\": "", "[": "", 
+        "]": "", "&": "", "%": "", "$": "", "€": "euro"
+      };
+      
+      return text.split('').map(char => specialCharactersMap[char] || char).join('');
+    }
 
-      function convertText() {
-        const inputText = document.getElementById('input_text').value;
-        const outputText = replaceSpecialCharacters(inputText);
-        document.getElementById('output_text').value = outputText;
-      }
+    function convertText() {
+      const inputText = document.getElementById('input_text').value;
+      const outputText = replaceSpecialCharacters(inputText);
+      document.getElementById('output_text').value = outputText;
+    }
 
-      function copyText() {
-        const outputText = document.getElementById('output_text');
-        outputText.select();
-        document.execCommand('copy');
-        alert('Texto copiado para a área de transferência!');
-      }
+    function copyText() {
+      const outputText = document.getElementById('output_text');
+      outputText.select();
+      document.execCommand('copy');
+      alert('Texto copiado para a área de transferência!');
+    }
 
-      function clearText() {
-        document.getElementById('input_text').value = '';
-      }
+    function clearText() {
+      document.getElementById('input_text').value = '';
+      document.getElementById('output_text').value = '';
+    }
 
-      function selectText() {
-        const inputText = document.getElementById('input_text');
-        inputText.select();
-      }
+    function selectText() {
+      const inputText = document.getElementById('input_text');
+      inputText.select();
+    }
 
-      function pasteText() {
-        navigator.clipboard.readText().then(text => {
-          document.getElementById('input_text').value = text;
-        });
-      }
-    </script>
-  </body>
+    function pasteText() {
+      navigator.clipboard.readText().then(text => {
+        document.getElementById('input_text').value = text;
+      });
+    }
+  </script>
+</body>
 </html>
