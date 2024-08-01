@@ -180,7 +180,7 @@
 
         function convertText() {
             const inputText = document.getElementById('input_text').value;
-            const outputText = replaceSpecialCharacters(inputText);
+            const outputText = inputText.split('\n').map(line => replaceSpecialCharacters(line)).join('\n');
             document.getElementById('output_text').value = outputText;
             document.getElementById('shorten_btn').disabled = false;
             document.getElementById('add_date_btn').disabled = false;
@@ -190,7 +190,7 @@
 
         function forceReplace() {
             const inputText = document.getElementById('input_text').value;
-            let outputText = replaceSpecialCharacters(inputText);
+            let outputText = inputText.split('\n').map(line => replaceSpecialCharacters(line)).join('\n');
             outputText = outputText.replace(/[^a-zA-Z0-9._-]/g, '');
             outputText = outputText.replace(/__+/g, '_'); 
             document.getElementById('output_text').value = outputText;
